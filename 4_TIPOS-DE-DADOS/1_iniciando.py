@@ -69,3 +69,25 @@ numero = 1.5e6
 print( a + c) # soma de int e float
 print( a * c) # multiplicação de int e float
 
+# Aula 4 
+numero = 2.6575
+
+num_arredondado = round(numero, 2 )
+
+print(num_arredondado)
+
+#biblioteca math
+import math
+
+valor = 7.9
+
+valor_cima = math.ceil(valor) # arredonda para cima
+valor_baixo = math.floor(valor) # arredonda para baixo
+
+print( valor_cima, valor_baixo)
+
+resultado = 0.1 + 0.2
+
+print(resultado)
+
+print(f"O resultado é {resultado:.1f}") # f string
