@@ -47,3 +47,25 @@ print("Contador após multiplicação:", contador)
 
 contador -= 10
 print("Contador após subtração:", contador)
+ 
+# aula 3 - float
+temperatura = 32.1
+pi = 3.14747474
+altura = 1.82
+
+# no exterior, estados unuidos=> , -> . 
+
+print("Temperatura:", temperatura)
+print(type(temperatura))
+
+c = 1.8
+d = 1.344854385353
+
+print( c + d) # soma de floats
+print( c * d) # multiplicação de floats
+
+numero = 1.5e6
+
+print( a + c) # soma de int e float
+print( a * c) # multiplicação de int e float
+
