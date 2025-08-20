@@ -37,7 +37,7 @@
 # e exibir as categorias.
 
 # Ex 1
-idade = 6
+idade = 42
 
 if idade < 13:
     print("Você é uma criança")
