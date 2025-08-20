@@ -93,3 +93,5 @@ print("Maior valor: ", max(nums))
 print("Quantidade: ", len(nums))
 print("Soma: ", sum(nums))
 print()  # <-- Pula linha após o exercício 5
+print()  # <-- Pula linha após o exercício 5
+print()  # <-- Pula linha após o exercício 5
