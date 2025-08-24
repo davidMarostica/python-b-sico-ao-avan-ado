@@ -7,4 +7,8 @@ from pacote_principal.subpacote import moduloB
 
 moduloB.funcaoB()
 
+# 2 - importacao relativa
 
+from pacote_principal.subpacote import moduloC
+
+moduloC.funcaoC()
