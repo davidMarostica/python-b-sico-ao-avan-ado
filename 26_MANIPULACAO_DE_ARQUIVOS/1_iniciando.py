@@ -1,11 +1,12 @@
 # aula 1 - arquivos em python
-# w = write
+# w = write (escreve, sobrescreve o conteúdo)
+
 with open("exemplo.txt", "w") as arquivo:
-    arquivo.write("Ola arquivo Python")
+    arquivo.write("Olá arquivo Python")
 
-    import csv
+import csv  # Importação deve estar fora do bloco 'with'
 
-with open("dados.csv", "w") as arquivo_csv:
+with open("dados.csv", "w", newline='') as arquivo_csv:
     writer = csv.writer(arquivo_csv)
     # csv = linhas e colunas, comma separated values
     writer.writerow(["Nome", "Idade"])
@@ -15,21 +16,25 @@ with open("dados.csv", "w") as arquivo_csv:
 
 with open("imagem.jpg", "rb") as img:
     conteudo = img.read()
-    '''
-    print(conteudo)
-    '''
+    # print(conteudo)  # descomente se quiser ver os bytes da imagem
 
-   # aula 2 - open e close
+# aula 2 - open e close
 arquivo = open("teste.txt", "w")
-print(arquivo.closed)
+print("Antes do close:", arquivo.closed)
 arquivo.write("Escrevi e pronto...")
-print(arquivo.closed)
+print("Durante o uso:", arquivo.closed)
 arquivo.close()
-print(arquivo.closed)
+print("Depois do close:", arquivo.closed)
 
-# open => abre o arquivo
-# close => fecha o arquivo
+# aula 3 - modos de arquivos
+with open("exemplo.txt", "r") as arquivo:
+    print("Conteúdo atual:", arquivo.read())
 
-# a gente realize operacoes com o with
+with open("exemplo.txt", "w") as arquivo:
+    arquivo.write("Sobrescrevendo tudo!")
 
-# se nao utilizar ou se pegar codigo legado/antigo, checar se há o close
+with open("exemplo.txt", "a") as arquivo:
+    arquivo.write("\nIsso está depois do que já foi escrito...")
+
+with open("exemplo.txt", "w") as arquivo:
+    arquivo.write("Sobrescrevendo tudo!")
