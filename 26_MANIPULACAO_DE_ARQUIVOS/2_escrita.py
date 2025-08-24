@@ -17,3 +17,18 @@ numeros = [1, 2, 3, 4]
 with open("arquivo_write.txt", "w") as arquivo:
     for numero in numeros:
         arquivo.write(f"Número: {numero} \n")
+
+# aula 2 - binários
+
+    # Lê os dados da imagem original
+with open("imagem.jpg", "rb") as imagem:
+    dados = imagem.read()
+
+# Cria uma cópia da imagem com os dados lidos
+with open("copia_imagem.jpg", "wb") as nova_imagem:
+    nova_imagem.write(dados)
+
+with open("imagem.jpg", "rb") as imagem, open("imagem_append.jpg", "ab") as append_img:
+    dados = imagem.read(1024)
+
+    append_img.write(dados)
