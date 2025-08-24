@@ -1,7 +1,8 @@
 # aula 1 - O que sao modulos
 import meu_modulo
 
-print(meu_modulo.saudacao("Matheus"))
+print(meu_modulo.saudacao("david"))
+
 
 import math
 
@@ -30,31 +31,3 @@ import os # operational system
 
 # print(os.getenv("PATH"))
 
-# aula 3 - Alias
-import numpy as np
-
-array = np.array([1, 2, 3, 4])
-
-print(array)
-
-from math import sqrt, pi
-
-print(sqrt(10))
-
-print(pi)
-
-from random import randint as ri
-
-print(ri(10, 1000))
-
-# from math import * <- má prática
-
-# aula 4 - modulos internos
-import calculadora
-
-print(calculadora.somar(1, 1))
-print(calculadora.subtrair(1, 1))
-
-from utilitarios import saudacoes
-
-saudacoes.saudacao()
