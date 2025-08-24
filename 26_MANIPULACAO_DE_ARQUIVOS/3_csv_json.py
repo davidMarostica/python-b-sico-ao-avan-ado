@@ -31,3 +31,44 @@ with open("dados.csv", "r") as arquivo_csv:
     dados = [dict(zip(cabecalho, linha)) for linha in leitor]
 
     print(dados)
+
+
+   
+   # aula 2 - escrita em csv
+with open("saida.csv", "w", newline="") as arquivo_csv:
+    escritor = csv.writer(arquivo_csv)
+
+    escritor.writerow(["Nome", "Idade", "Cidade"])
+    escritor.writerow(["Matheus", "33", "Florianópolis"])
+    escritor.writerow(["João", "40", "São Paulo"])
+
+dados = [
+    ["Produto", "Valor"],
+    ["Cadeira", 100],
+    ["Mesa", 500]
+]
+
+with open("produtos.csv", "w", newline="") as arquivo_csv:
+    escritor = csv.writer(arquivo_csv)
+
+    escritor.writerows(dados)
+
+with open("produtos_teste.csv", "w", newline="") as arquivo_csv:
+    escritor = csv.writer(arquivo_csv, delimiter="/")
+
+    escritor.writerows(dados)
+
+with open("saida.csv", "a", newline="") as arquivo_csv:
+    escritor = csv.writer(arquivo_csv)
+
+    escritor.writerow(["Maria", "50", "Rio de Janeiro"])
+
+with open("produtos_teste.csv", "w", newline="") as arquivo_csv:
+    escritor = csv.writer(arquivo_csv, delimiter="/")
+
+    escritor.writerows(dados)
+
+with open("saida.csv", "a", newline="") as arquivo_csv:
+    escritor = csv.writer(arquivo_csv)
+
+    escritor.writerow(["Maria", "50", "Rio de Janeiro"])
