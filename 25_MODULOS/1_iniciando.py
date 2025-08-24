@@ -51,3 +51,13 @@ print(ri(10, 1000))
 
 # from math import * <- má prática
 
+# aula 4 - modulos internos
+import calculadora
+
+print(calculadora.somar(1, 1))
+print(calculadora.subtrair(1, 1))
+
+from utilitarios import saudacoes
+
+saudacoes.saudacao()
+
