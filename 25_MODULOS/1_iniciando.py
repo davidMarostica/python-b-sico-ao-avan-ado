@@ -29,5 +29,25 @@ print(datetime.date.today())
 import os # operational system
 
 print(os.getenv("PATH"))
+ 
 
+# aula 3 - Alias
+import numpy as np
+
+array = np.array([1, 2, 3, 4])
+
+print(array)
+
+from math import sqrt, pi
+
+print(sqrt(10))
+
+print(pi)
+
+from random import randint as ri
+
+print(ri(10, 1000))
+
+
+# from math import * <- má prática
 
