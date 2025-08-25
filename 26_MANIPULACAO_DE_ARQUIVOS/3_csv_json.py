@@ -111,3 +111,16 @@ with open("dados.csv", "r") as arquivo_csv:
     dados = list(leitor)
 
     print(dados)
+
+    with open("dados_convertidos.json", "w") as arquivo_json:
+        json.dump(dados, arquivo_json, indent=4)
+
+    with open("dados_convertidos.json", "r") as arquivo_json:
+        dados = json.load(arquivo_json)   
+
+    with open("dados_reconvertidos.csv", "w", newline="") as arquivo_csv:
+         escritor = csv.DictWriter(arquivo_csv, fieldnames=dados[0].keys())
+
+         escritor.writeheader()
+
+         escritor.writerows(dados)
