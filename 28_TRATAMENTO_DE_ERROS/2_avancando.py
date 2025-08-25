@@ -36,3 +36,18 @@ except TypeError as e:
     print(e)
 
 
+#  aula 3 - multiplas excecoes
+# try:
+#     numero = int(input("Digite um numero"))
+#     divisao = 10 / numero
+# except (ValueError, ZeroDivisionError) as e:
+#     print(f"Erro: {e}")
+
+
+try:
+    numero = int(input("Digite um numero"))
+    divisao = 10 / numero
+except ValueError:
+    print(f"Erro: Você não digitou um numero")
+except ZeroDivisionError:
+    print(f"Erro: Divisao por 0 nao é aceita")
