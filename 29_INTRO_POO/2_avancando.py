@@ -23,3 +23,23 @@ print(ContaBancaria.taxa_juros)
 ContaBancaria.taxa_juros = 0.10
 
 print(ContaBancaria.taxa_juros)
+
+
+# aula 2 - métodos
+class Circulo:
+    pi = 3.14
+
+    @classmethod
+    def area_com_raio(cls, raio):
+        return cls.pi * (raio ** 2)
+    
+print(Circulo.area_com_raio(5))
+
+class Conversor:
+    @staticmethod
+    def celsius_p_fahrenheit(celsius):
+        return (celsius * 9/5) + 32
+    
+
+print(Conversor.celsius_p_fahrenheit(10))
+print(Conversor.celsius_p_fahrenheit(30))
