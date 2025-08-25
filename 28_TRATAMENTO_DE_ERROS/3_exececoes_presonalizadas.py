@@ -41,3 +41,27 @@ try:
         raise ConfiguracaoInvalidaError("O IP não está configurado.")
 except ConfiguracaoInvalidaError as e:
     print(e)
+
+
+# aula 3 - encadeamento de excecoes
+try:
+    try:
+        raise ValueError("Erro inicial...")
+    except ValueError as e:
+        raise KeyError("Erro secundário...") from e
+except KeyError as e:
+    print(f"Erro final: {e}")
+
+    print(f"Causa original: {e.__cause__}")
+
+def carregar_dados():
+    raise FileNotFoundError("Arquivo nao encontrado!")
+
+try:
+    try:
+        carregar_dados()
+    except FileNotFoundError as e:
+        raise RuntimeError("Erro ao Carregar os Dados que Vieram do Arquivo") from e
+except RuntimeError as e:
+    print(f"Causa do erro: {e.__cause__}")
+    print(f"Erro final: {e}")
