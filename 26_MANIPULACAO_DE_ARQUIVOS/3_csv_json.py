@@ -88,3 +88,26 @@ usuarios = [
 
 with open("usuarios.json", "w") as arquivo_json:
     json.dump(usuarios, arquivo_json)
+
+    # aula 4- leitura json
+with open("dados.json", "r") as arquivo_json:
+    dados = json.load(arquivo_json)
+
+    print(dados['nome'])
+    with open("usuarios.json", "r") as arquivo_json:
+     usuarios = json.load(arquivo_json)
+ 
+    for usuario in usuarios:
+        print(usuario)
+        print(f"Nome: {usuario['nome']} e Idade: {usuario['idade']}")
+
+# ler 1 dado só -> n precisa loop
+# ler varios dados -> lista -> aplicar um loop
+
+# aula 5 - conversao de json e csv
+with open("dados.csv", "r") as arquivo_csv:
+    leitor = csv.DictReader(arquivo_csv)
+
+    dados = list(leitor)
+
+    print(dados)
