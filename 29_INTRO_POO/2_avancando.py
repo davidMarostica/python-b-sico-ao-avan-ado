@@ -43,3 +43,29 @@ class Conversor:
 
 print(Conversor.celsius_p_fahrenheit(10))
 print(Conversor.celsius_p_fahrenheit(30))
+
+# aula 3 - self
+
+class Calculadora:
+    def __init__(self):
+        self.historico = []
+
+    def somar(self, a, b):
+        resultado = a + b
+
+        self.historico.append(f"Somar: {a} + {b} = {resultado}")
+
+        return resultado
+    
+    def exibir_historico(self):
+        return self.historico
+    
+
+calc = Calculadora()
+
+print(calc.somar(10, 10))
+print(calc.exibir_historico())
+
+print(calc.somar(5, 12))
+print(calc.somar(3, 20))
+print(calc.exibir_historico())
