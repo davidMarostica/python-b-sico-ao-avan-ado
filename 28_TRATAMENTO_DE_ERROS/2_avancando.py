@@ -20,3 +20,19 @@ except ZeroDivisionError as e:
 finally:
     print("A operação foi concluida!")
 
+# aula 2 - tipos comuns de erros
+pessoa = {"nome": "Aline", "idade": 30}
+
+try:
+    print(pessoa["profissao"])
+except KeyError as e:
+    print("Chave inexistente!")
+    print(e)
+
+try:
+    soma = "abc" + 5
+except TypeError as e:
+    print("Tipos inválidos para a operação")
+    print(e)
+
+
