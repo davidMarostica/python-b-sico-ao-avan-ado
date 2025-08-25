@@ -124,3 +124,33 @@ with open("dados.csv", "r") as arquivo_csv:
          escritor.writeheader()
 
          escritor.writerows(dados)
+
+
+# aula 6 - tratamento de erros
+try:
+    # a gente executa algo
+    with open("teste_nao_existe.txt", "r") as arquivo:
+        conteudo = arquivo.read()
+except FileNotFoundError:
+    print("Erro: arquivo nao encontrado")
+
+try:
+    # a gente executa algo
+    with open("teste_nao_existe.txt", "r") as arquivo:
+        conteudo = arquivo.read()
+except PermissionError:
+    print("Erro: permissão negada para acessar")
+except FileNotFoundError:
+    print("Erro: arquivo nao encontrado 2")
+
+
+try:
+    arquivo = open("arquivo_write2.txt")
+    conteudo = arquivo.read()
+except FileNotFoundError:
+    print("nao encontrado")
+finally:
+    try:
+        arquivo.close()
+    except NameError:
+        print("arquivo nunca foi aberto")    
