@@ -20,3 +20,24 @@ try:
         raise SaldoInsuficienteError(saldo, valor)
 except SaldoInsuficienteError as e:
     print(e)
+
+
+    # aula 2 - raise
+try:
+    idade = -1
+
+    if idade < 0:
+        raise ValueError("Idade nao pode ser negativa...")
+except ValueError as e:
+    print(e)
+
+class ConfiguracaoInvalidaError(Exception):
+    pass
+
+try:
+    configuracao = {"chave_ip": "127.0.0.1"}
+
+    if "chave_ip" not in configuracao:
+        raise ConfiguracaoInvalidaError("O IP não está configurado.")
+except ConfiguracaoInvalidaError as e:
+    print(e)
