@@ -69,3 +69,39 @@ print(calc.exibir_historico())
 print(calc.somar(5, 12))
 print(calc.somar(3, 20))
 print(calc.exibir_historico())
+
+
+# aula 4 - init
+
+# init == funcao construtora
+
+class Pessoa:
+    def __init__(self, nome, idade, profissao):
+        self.nome = nome
+        self.idade = idade
+        self.profissao = profissao
+
+p1 = Pessoa("David", 42, "Programador")
+
+print(p1.nome)
+
+class Produto:
+    def __init__(self, preco, nome="Produto Genérico"):
+        self.nome = nome
+
+        if preco < 0:
+            raise ValueError("O preço nao pode ser negativo")
+
+# new => Python n tem new
+produto = Produto(10)
+
+print(produto.nome)
+
+try:
+    produto2 = Produto(-5, "Cadeira")
+
+    print(produto2.nome)
+except ValueError as e:
+    print(e)
+
+
