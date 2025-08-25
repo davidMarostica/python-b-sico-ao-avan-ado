@@ -39,7 +39,7 @@ with open("saida.csv", "w", newline="") as arquivo_csv:
     escritor = csv.writer(arquivo_csv)
 
     escritor.writerow(["Nome", "Idade", "Cidade"])
-    escritor.writerow(["Matheus", "33", "Florianópolis"])
+    escritor.writerow(["David", "33", "Florianópolis"])
     escritor.writerow(["João", "40", "São Paulo"])
 
 dados = [
@@ -61,7 +61,7 @@ with open("produtos_teste.csv", "w", newline="") as arquivo_csv:
 with open("saida.csv", "a", newline="") as arquivo_csv:
     escritor = csv.writer(arquivo_csv)
 
-    escritor.writerow(["Maria", "50", "Rio de Janeiro"])
+    escritor.writerow(["Elke", "50", "Rio de Janeiro"])
 
 with open("produtos_teste.csv", "w", newline="") as arquivo_csv:
     escritor = csv.writer(arquivo_csv, delimiter="/")
@@ -71,4 +71,20 @@ with open("produtos_teste.csv", "w", newline="") as arquivo_csv:
 with open("saida.csv", "a", newline="") as arquivo_csv:
     escritor = csv.writer(arquivo_csv)
 
-    escritor.writerow(["Maria", "50", "Rio de Janeiro"])
+    escritor.writerow(["Elke", "50", "Rio de Janeiro"])
+
+    # aula 3 - JSON
+    import json
+
+    dados = {"nome": "David", "idade": 42, "profissao": "Programador"}
+
+    with open("dados.json", "w") as arquivo_json:
+        json.dump(dados, arquivo_json)
+
+usuarios = [
+    {"nome": "David", "idade": 42, "profissao": "Programador"},
+    {"nome": "Elke", "idade": 25, "profissao": "Medica"}
+]
+
+with open("usuarios.json", "w") as arquivo_json:
+    json.dump(usuarios, arquivo_json)
