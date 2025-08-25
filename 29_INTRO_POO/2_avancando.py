@@ -105,3 +105,45 @@ except ValueError as e:
     print(e)
 
 
+# aula 5 - alterando e consultando atributos
+class PessoaAtributo:
+    def __init__(self, nome, idade):
+        self.__nome = nome
+        self.__idade = idade
+    
+    def get_nome(self):
+        return self.__nome
+
+    def set_nome(self, nome):
+        self.__nome = nome
+
+    def get_idade(self):
+        return f"A sua idade é {self.__idade} anos."
+
+    def set_idade(self, idade):
+        if idade < 0:
+            print("A idade não pode ser menor que 0!")
+            return
+        self.__idade = idade
+
+
+joao = PessoaAtributo("João", 34)
+maria = PessoaAtributo("Maria", 28)
+
+# joao.nome = "João Pedro"
+
+# maria.idade = 29
+
+# print(joao.nome)
+# print(maria.idade)
+
+print(joao.get_nome())
+
+joao.set_nome("João")
+
+print(joao.get_nome())
+
+joao.set_idade(-10)
+
+print(joao.get_idade())
+
