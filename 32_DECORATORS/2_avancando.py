@@ -1,49 +1,54 @@
-# aula 1 - introducao do modulo
-
-# criar uma funcao
-# @funcao
-
-# decorators são reutilizaveis
-
-def meu_decorador(funcao):
-    def wrapper():
-        print("Iniciando função...")
-        funcao()
-        print("Terminando funcao...")
+# aula 1 - multiplos decorators
+def decorador1(func):
+    def wrapper(*args, **kwargs):
+        print("Executando decorator1")
+        return func(*args, **kwargs)
     return wrapper
 
-@meu_decorador
-def minha_funcao():
-    print("Executando a função principal!")
+def decorador2(func):
+    def wrapper(*args, **kwargs):
+        print("Executando decorator2")
+        return func(*args, **kwargs)
+    return wrapper
 
-minha_funcao()
+@decorador2
+@decorador1
+def dizer_ola():
+    print("Olá, tudo bem?")
 
+dizer_ola()
 
-# aula 2  - funcoes como objetos de primeira classe
+# aula 2 - decoradores de classe
 
-# funcao em variavel
-def saudacao():
-    return "Ola mundo!"
+# adicionando metodos
+def adicionar_metodo_novo(cls):
+    def metodo_novo(self):
+        return f"Este é um método novo na classe {cls.__name__}"
+    cls.metodo_novo = metodo_novo
+    return cls
 
-cumprimento = saudacao
+@adicionar_metodo_novo
+class MinhaClasse:
+    def __init__(self, nome):
+        self.nome = nome
 
-print(cumprimento())
+obj = MinhaClasse("Nome do Objeto")
 
-# funcao como argumento
-def executar_funcao(func):
-    print("alguma coisa...")
-    print(func())
+print(obj.metodo_novo())
 
-executar_funcao(saudacao)
+# alterar o comportamento de inicializacao
+def decorador_classe(cls):
+    class NovaClasse(cls):
+        def __init__(self, *args, **kwargs):
+            print("Inicializando a classe com comportamento diferenciado.")
+            super().__init__(*args, **kwargs)
+    return NovaClasse
 
-# retornar funcao dentro de funcao
-def criar_multiplicador(n):
-    def multiplicador(x):
-        return x * n
-    return multiplicador
+@decorador_classe
+class Pessoa:
+    def __init__(self, nome):
+        self.nome = nome
 
-multiplicador = criar_multiplicador(3)
+p = Pessoa("Alice")
 
-print(multiplicador(10))
-print(multiplicador(15))
-print(multiplicador(20))
+print(p.nome)
