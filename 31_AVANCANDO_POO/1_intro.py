@@ -85,3 +85,83 @@ print(carro.modelo)
 carro.modelo = "Civic 2010"
 
 print(carro.modelo)
+
+
+# aula 3 - heranca
+class Animal:
+    def __init__(self, nome):
+        self.nome = nome
+
+    def fazer_som(self):
+        print("Som genérico")
+
+
+class Cachorro(Animal):
+    def pular_em_pessoa(self):
+        print("O cachorro pulou na visita...")
+
+    def fazer_som(self):
+        print("Latiu...")
+
+
+cachorro = Cachorro("Turca")
+
+cachorro.pular_em_pessoa()
+
+print(cachorro.nome)
+
+cachorro.fazer_som()
+
+
+class Gato(Animal):
+    def arranhar(self):
+        print("O gato arranhou...")
+
+
+gato = Gato("Luna")
+
+print(gato.nome)
+
+gato.arranhar()
+
+gato.fazer_som()
+
+# aula 4 - heranca multipla
+class Caminhao:
+    def carregar_caminhao(self):
+        print("O caminhao foi carregado.")
+
+class VeiculoEletrico:
+    def carregar_bateria(self):
+        print("A bateria foi carregada.")
+
+
+class CaminhaoEletrico(Caminhao, VeiculoEletrico):
+    def descarga_automatizada(self):
+        print("O caminhão foi descarregado!")
+
+
+caminhao_eletrico = CaminhaoEletrico()
+
+caminhao_eletrico.carregar_caminhao()
+
+caminhao_eletrico.carregar_bateria()
+
+caminhao_eletrico.descarga_automatizada()
+
+# conflitos
+class ClassA:
+    def acao(self):
+        print("Acao classe A")
+
+class ClassB:
+    def acao(self):
+        print("Acao classe B")
+
+# MRO -> da mais importancia para as classes da esquerda
+class ClassC(ClassB, ClassA):
+    pass
+
+obj = ClassC()
+
+obj.acao()
