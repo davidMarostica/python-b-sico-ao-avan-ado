@@ -17,3 +17,33 @@ def minha_funcao():
     print("Executando a função principal!")
 
 minha_funcao()
+
+
+# aula 2  - funcoes como objetos de primeira classe
+
+# funcao em variavel
+def saudacao():
+    return "Ola mundo!"
+
+cumprimento = saudacao
+
+print(cumprimento())
+
+# funcao como argumento
+def executar_funcao(func):
+    print("alguma coisa...")
+    print(func())
+
+executar_funcao(saudacao)
+
+# retornar funcao dentro de funcao
+def criar_multiplicador(n):
+    def multiplicador(x):
+        return x * n
+    return multiplicador
+
+multiplicador = criar_multiplicador(3)
+
+print(multiplicador(10))
+print(multiplicador(15))
+print(multiplicador(20))
