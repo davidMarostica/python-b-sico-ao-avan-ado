@@ -72,3 +72,25 @@ executar_som(Gato())
 cachorro = Cachorro()
 
 executar_som(cachorro)
+
+# aula 3 - sobreposicao de metodos
+class Veiculo:
+    def mover(self):
+        print("Movendo o veiculo...")
+
+    def parar(self):
+        print("O veículo foi parado.")
+
+class Carro(Veiculo):
+    def mover(self):
+        print("Movendo o carro...")
+
+    def parar(self):
+        print("Freando o carro...")
+        super().parar()
+
+carro = Carro()
+
+carro.mover()
+
+carro.parar()
