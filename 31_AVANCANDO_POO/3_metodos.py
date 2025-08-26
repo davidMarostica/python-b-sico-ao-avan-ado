@@ -50,3 +50,22 @@ c2 = ContaBancaria("Pedro", 2000)
 c3 = ContaBancaria("João", 3000)
 
 print(f"Nós temos {ContaBancaria.obter_total_de_contas()} contas no banco!")
+
+# aula 3  - dunder methods
+class Produto:
+    def __init__(self, nome, preco):
+        self.nome = nome
+        self.preco = preco
+
+    def __str__(self):
+        return f"Produto: {self.nome} Preço: {self.preco}"
+    
+    def __repr__(self):
+        return f"Produto(nome={self.nome}, preco={self.preco})"
+
+
+prod1 = Produto("Notebook", 2000)
+
+print(prod1)
+print(str(prod1))
+print(repr(prod1))
