@@ -41,3 +41,47 @@ from collections.abc import Iterable
 
 print(isinstance([1,2 ,3], Iterable))
 print(isinstance(123, Iterable))
+
+
+# aula 2- geradores
+def numeros():
+    yield 1
+    yield 2
+    yield 3
+
+for numero in numeros():
+    print(numero)
+
+
+def pares(n):
+    for i in range(n):
+        if i % 2 == 0:
+            yield i
+
+print(list(pares(15)))
+
+
+def contador_infinito():
+    i = 1
+    while True:
+        yield i
+        i += 1
+
+
+cont = contador_infinito()
+
+print(next(cont))
+print(next(cont))
+print(next(cont))
+print(next(cont))
+print(next(cont))
+print(next(cont))
+
+def mensagens():
+    yield "Olá"
+    yield "Bem-vindo"
+    yield "Tudo bem?"
+    yield "Tchau"
+
+for msg in mensagens():
+    print(msg)
