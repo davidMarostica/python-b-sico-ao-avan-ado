@@ -52,3 +52,73 @@ class Pessoa:
 p = Pessoa("Alice")
 
 print(p.nome)
+
+
+# aula 3 - decoradores do python
+
+class Contador:
+    total = 0
+
+    @classmethod
+    def incrementar(cls):
+        cls.total +=1
+
+    @classmethod
+    def exibir_total(cls):
+        return f"Total: {cls.total}"
+
+Contador.incrementar()
+Contador.incrementar()
+Contador.incrementar()
+
+print(Contador.exibir_total())
+
+class Matematica:
+
+    @staticmethod
+    def soma(a, b):
+        return a + b
+    
+    @staticmethod
+    def subtracao(a, b):
+        return a - b
+
+print(Matematica.soma(10, 20))
+
+print(Matematica.subtracao(50, 5))
+
+class Retangulo:
+    def __init__(self, largura, altura):
+        self.largura = largura
+        self.altura = altura
+
+    @property
+    def area(self):
+        return self.largura * self.altura
+
+ret = Retangulo(10, 20)
+
+print(ret.area)
+
+
+class Produto:
+    imposto = 0.1
+
+    def __init__(self, preco):
+        self.preco = preco
+
+    @classmethod
+    def alterar_imposto(cls, novo_imposto):
+        cls.imposto = novo_imposto
+
+    def calcular_preco_final(self):
+        return self.preco * (1 + Produto.imposto)
+
+
+produto = Produto(100)
+
+print(f"Preço final do Produto: {produto.calcular_preco_final()}")
+
+Produto.alterar_imposto(.3)
+
+print(f"Preço final do Produto: {produto.calcular_preco_final()}")
