@@ -84,3 +84,14 @@ def calcular_raiz_quadrada(x):
 
 print(calcular_raiz_quadrada(10))
 # print(calcular_raiz_quadrada(-10)) -> dispara o erro
+
+# aula 4- aninhando funcoes
+def externa():
+    mensagem = "Olá Mundo!"
+    def interna():
+        print(f"A mensagem é: {mensagem}")
+    return interna
+
+func = externa()
+
+func()
