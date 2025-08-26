@@ -46,3 +46,29 @@ class Z(Y):
 obj3 = Z()
 
 obj3.fazer_algo()
+
+# aula 2 - polimorfismo
+class Gato:
+    def fazer_som(self):
+        print("Miau")
+
+class Cachorro:
+    def fazer_som(self):
+        print("AU au")
+
+# basico, com metodo comum
+animais = [Gato(), Cachorro()]
+
+for animal in animais:
+    animal.fazer_som()
+
+# funcao polimorfica
+def executar_som(animal):
+    print("Emitindo som do animal:")
+    animal.fazer_som()
+
+executar_som(Gato())
+
+cachorro = Cachorro()
+
+executar_som(cachorro)
