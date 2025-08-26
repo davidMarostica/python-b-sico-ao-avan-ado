@@ -69,3 +69,27 @@ prod1 = Produto("Notebook", 2000)
 print(prod1)
 print(str(prod1))
 print(repr(prod1))
+
+# aula 4- outros dunder methods
+class Pessoa:
+    def __init__(self, nome, idade):
+        self.nome = nome
+        self.idade = idade
+
+    def __eq__(self, outro):
+        return self.nome == outro.nome and self.idade == outro.idade
+    
+    def __lt__(self, outro):
+        return self.idade < outro.idade
+    
+
+p1 = Pessoa("Marcos", 30)
+p2 = Pessoa("Marcos", 30)
+p3 = Pessoa("Maria", 40)
+
+print(p1 == p2)
+print(p1 == p3)
+
+
+print(p1 < p2)
+print(p1 < p3)
