@@ -40,3 +40,36 @@ texto5 = "PytHon"
 
 print(bool(padrao.search(texto4)))
 print(bool(padrao.search(texto5)))
+
+
+# aula 3 - aplicacoes praticas
+
+email = "usuario@gmail.com"
+
+padrao_email = r"^[\w\.-]+@[\w\.-]+\.\w{2,4}$"
+
+print(bool(re.match(padrao_email, email)))
+
+email2 = "usuario2gmail.com"
+
+print(bool(re.match(padrao_email, email2)))
+
+cep = "88333-370"
+
+padrao_cep = r"^\d{5}-\d{3}$"
+
+print(bool(re.match(padrao_cep, cep)))
+
+cep2 = "88888-23"
+
+print(bool(re.match(padrao_cep, cep2)))
+
+url = "https://google.com"
+
+padrao_url = r"^https://[\w\.-]+$"
+
+print(bool(re.match(padrao_url, url)))
+
+url2 = "https://teste"
+
+print(bool(re.match(padrao_url, url2)))
