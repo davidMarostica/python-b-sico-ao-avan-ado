@@ -62,3 +62,22 @@ inicio = time.time()
 fim = time.time()
 
 print(f"Tempo de execução em segundos: {fim - inicio}")
+
+
+# aula 4 -modulo calendar
+
+import calendar
+
+print(calendar.month(2024, 12))
+
+print(calendar.calendar(2025))
+
+print(calendar.isleap(2024))
+print(calendar.isleap(2025))
+print(calendar.isleap(2026))
+print(calendar.isleap(2027))
+print(calendar.isleap(2028))
+
+dias = calendar.monthcalendar(2024, 11)
+
+print(dias)
