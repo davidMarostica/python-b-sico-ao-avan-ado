@@ -29,3 +29,46 @@ def numero_fibonacci(n):
         a,b = b, a + b
 
 print(list(numero_fibonacci(15)))
+
+
+# aual 3 - iterador personalizado
+class SequenciaPares:
+    def __init__(self, limite):
+        self.limite = limite
+        self.atual = 0
+
+    def __iter__(self):
+        return self
+    
+    def __next__(self):
+        if self.atual <= self.limite:
+            resultado = self.atual
+            self.atual += 2
+            return resultado
+        raise StopIteration
+    
+pares = SequenciaPares(20)
+
+for num in pares:
+    print(num)
+
+class Ciclo:
+    def __init__(self, valores):
+        self.valores = valores
+        self.indice = 0
+
+    def __iter__(self):
+        return self
+    
+    def __next__(self):
+        if self.indice >= len(self.valores):
+            self.indice = 0
+        valor = self.valores[self.indice]
+        self.indice += 1
+        return valor
+    
+
+ciclo = Ciclo([1, 2, 3, 4])
+
+for _ in range(20):
+    print(next(ciclo))
