@@ -42,7 +42,6 @@ from collections.abc import Iterable
 print(isinstance([1,2 ,3], Iterable))
 print(isinstance(123, Iterable))
 
-
 # aula 2- geradores
 def numeros():
     yield 1
@@ -85,3 +84,46 @@ def mensagens():
 
 for msg in mensagens():
     print(msg)
+
+# aula 3 - yield e return
+
+def funcao_com_return():
+    return 42
+
+print(funcao_com_return())
+
+
+def funcao_com_yield():
+    yield 42
+
+gen = funcao_com_yield()
+
+print(next(gen))
+
+
+def contador():
+    yield 1
+    print("Pausa")
+    yield 2
+    print("Continua")
+    yield 3
+    print("Finaliza")
+
+for valor in contador():
+    print(valor)
+
+
+def quadrados_return(n):
+    resultado = []
+    for i in range(n):
+        resultado.append(i ** 2)
+    return resultado
+
+
+def quadrados_yield(n):
+    for i in range(n):
+        yield i ** 2
+
+print(quadrados_return(5))
+print(list(quadrados_yield(5)))
+
