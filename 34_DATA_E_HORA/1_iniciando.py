@@ -28,3 +28,14 @@ print(data_com_horario)
 diferenca = data_com_horario_2 - data_com_horario
 
 print(diferenca)
+
+# aula 3 - extraindo info de datas
+
+print(f"Dia: {data_inicio.day} Mês: {data_inicio.month} Ano: {data_inicio.year}")
+
+print(f"Dia da semana: {data_inicio.weekday()}") # 0 = segunda-feira
+
+print(f"Hora: {data_inicio.hour} Minuto: {data_inicio.minute} Segundos: {data_inicio.second}")
+
+print(data_inicio.isoformat())
+print(data_inicio)
