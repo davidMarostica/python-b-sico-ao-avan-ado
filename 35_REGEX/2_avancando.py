@@ -27,3 +27,32 @@ print(re.findall(r"a+", "aaabaaca"))
 print(re.findall(r"a?", "aaabaaca"))
 
 print(re.findall(r"a{2,3}", "aaabaaca"))
+
+
+# aula 3 - metodos de re
+
+texto = "Python é uma boa linguagem"
+
+resultado = re.search(r"boa", texto)
+
+print(resultado.group())
+
+resultado2 = re.search(r"boa2", texto)
+
+print(resultado2)
+
+resultado3 = re.match(r"Python", texto)
+
+print(bool(resultado3))
+
+resultado4 = re.match(r"boa", texto)
+
+print(bool(resultado4))
+
+novo_texto = re.sub(r"boa", "ótima", texto)
+
+print(novo_texto)
+
+resultado5 = re.findall(r"a", texto)
+
+print(resultado5)
