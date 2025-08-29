@@ -73,3 +73,23 @@ print(bool(re.match(padrao_url, url)))
 url2 = "https://teste"
 
 print(bool(re.match(padrao_url, url2)))
+
+# aula 4 - substituicao
+
+texto = "A senha é 1234"
+
+novo_texto = re.sub(r"\d", "X", texto)
+
+print(novo_texto)
+
+texto = "O preço é R$ 100,00"
+
+novo_texto = re.sub(r"(\d+),(\d+)", r"\1.\2", texto)
+
+print(novo_texto)
+
+texto = "Este     texto espaços       desnecessários"
+
+novo_texto = re.sub(r"\s+", " ", texto)
+
+print(novo_texto)
