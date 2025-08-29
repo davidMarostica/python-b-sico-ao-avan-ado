@@ -29,6 +29,7 @@ def menu():
         print("=== Validador de Dados ===")
         print("1. Validar E-mail")
         print("2. Validar Telefone")
+        
         print("3. Validar CPF")
         print("4. Sair")
 
