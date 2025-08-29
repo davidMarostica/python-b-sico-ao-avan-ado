@@ -28,3 +28,22 @@ print(re.findall(r"[a-e]+", texto))
 texto = "Python é muito bom, python é muito legal, PyThOn é demais!"
 
 print(re.findall(r"python", texto, re.IGNORECASE))
+
+
+# aula 3 - sintaxe de metacaracteres
+texto = "abcdefghij abcdef 123"
+
+print(re.findall(r"a.c", texto))
+print(re.findall(r"d.f", texto))
+
+# aALGUMACOISAf
+# aALGUMACOISAc
+
+print(re.findall(r"\d*", texto))
+
+print(re.findall(r"\d+", texto))
+
+print(re.findall(r"[abc]", texto))
+print(re.findall(r"[123]", texto))
+print(re.findall(r"[1-3]", texto))
+print(re.findall(r"[a-e]", texto))
