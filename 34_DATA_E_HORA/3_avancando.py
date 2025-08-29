@@ -43,3 +43,30 @@ data_br = datetime(2024, 2, 1, tzinfo=zona_br)
 
 print(data_br)
 
+# aula 3 - conversao de fusos horarios
+data_sem_fuso = datetime(2024, 12, 25, 14, 0)
+
+zona_paris = pytz.timezone("Europe/Paris")
+
+data_paris = zona_paris.localize(data_sem_fuso)
+
+print(data_sem_fuso)
+print(data_paris)
+
+zona_tokyo = pytz.timezone("Asia/Tokyo")
+
+data_tokyo = data_paris.astimezone(zona_tokyo)
+
+print(f"Data em Paris: {data_paris}, Data em Tóquio: {data_tokyo}")
+
+# convreter UTC para local
+zona_utc = pytz.UTC
+data_utc = datetime.now(zona_utc)
+
+print(data_utc)
+
+zona_india = pytz.timezone("Asia/Kolkata")
+
+data_india = data_utc.astimezone(zona_india)
+
+print(f"Data em India: {data_india}, Data em UTC: {data_utc}")
