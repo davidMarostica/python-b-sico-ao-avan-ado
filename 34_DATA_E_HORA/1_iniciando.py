@@ -39,3 +39,14 @@ print(f"Hora: {data_inicio.hour} Minuto: {data_inicio.minute} Segundos: {data_in
 
 print(data_inicio.isoformat())
 print(data_inicio)
+
+# aula 4 - formatacao
+
+print(data.strftime("%d/%m/%Y"))
+print(data.strftime("%d/%m/%y"))
+print()
+
+print(data_inicio.strftime("%d/%m/%Y %H:%M:%S"))
+print(data_inicio.strftime("%d-%m-%Y"))
+print()
+print(data_inicio.strftime("%A, %d de %B de %Y"))
