@@ -42,3 +42,4 @@ zona_br = pytz.timezone("America/Sao_Paulo")
 data_br = datetime(2024, 2, 1, tzinfo=zona_br)
 
 print(data_br)
+
