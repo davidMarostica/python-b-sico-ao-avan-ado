@@ -127,3 +127,19 @@ def quadrados_yield(n):
 print(quadrados_return(5))
 print(list(quadrados_yield(5)))
 
+# aula 4 - aplicacoes praticas de geradores
+
+def gerar_primos(limite):
+    for num in range(2, limite + 1):
+        if all(num % i != 0 for i in range(2, int(num ** .5) + 1)):
+            yield num
+
+print(list(gerar_primos(10)))
+
+def somatorio(n):
+    soma = 0
+    for i in range(1, n + 1):
+        soma += i
+        yield soma
+
+print(list(somatorio(10)))
