@@ -47,3 +47,24 @@ print(re.findall(r"[abc]", texto))
 print(re.findall(r"[123]", texto))
 print(re.findall(r"[1-3]", texto))
 print(re.findall(r"[a-e]", texto))
+
+# aula 4 - ancoras
+
+# no comeco ou final do texto = ancora
+
+texto = "Python é poderoso"
+
+print(bool(re.match(r"^Python", texto)))
+
+print(bool(re.match(r"^poderoso", texto)))
+
+# ^ comeco
+# $ no final
+
+print(bool(re.search(r"Python$", texto)))
+
+print(bool(re.search(r"poderoso$", texto)))
+
+print(bool(re.match(r"^Python é poderoso$", texto)))
+
+print(bool(re.match(r"^Python é$", texto)))
