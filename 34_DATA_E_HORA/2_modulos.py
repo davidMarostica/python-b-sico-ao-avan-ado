@@ -34,3 +34,31 @@ periodo = timedelta(days=3, hours=3)
 data_evento = data1 + periodo
 
 print(data_evento)
+
+
+# aula 3 - time
+import time
+
+timestamps = time.time()
+
+print(timestamps)
+
+# converter timestamp para data legivel
+data_legivel = time.ctime(timestamps)
+
+print(data_legivel)
+
+print("Parando")
+# #time.sleep(2)
+print("Continuando")
+
+# medir o tempo de execucao de um codigo
+
+inicio = time.time()
+
+# for _ in range(100000000):
+#    pass
+
+fim = time.time()
+
+print(f"Tempo de execução em segundos: {fim - inicio}")
