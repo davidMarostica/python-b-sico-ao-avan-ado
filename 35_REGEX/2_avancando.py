@@ -56,3 +56,20 @@ print(novo_texto)
 resultado5 = re.findall(r"a", texto)
 
 print(resultado5)
+
+
+# aula 4 - grupos
+
+texto = "Data: 25/10/2024"
+
+resultados = re.search(r"(\d{2})/(\d{2})/(\d{4})", texto)
+
+print(resultados.group(3))
+
+texto = "Telefone: (48) 99999-0506"
+
+resultados = re.search(r"\((?P<ddd>\d{2})\) (?P<num>\d{5}-\d{4})", texto)
+
+print(resultados.group("ddd"))
+
+print(resultados.group("num"))
