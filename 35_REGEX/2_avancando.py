@@ -16,3 +16,14 @@ print(re.findall(r"\s", texto))
 texto = "abc 123 xyz"
 
 print(re.findall(r"[a-c1-3]+", texto))
+
+
+# aula 2 - quantificadores
+
+print(re.findall(r"a*", "aaabaaca"))
+
+print(re.findall(r"a+", "aaabaaca"))
+
+print(re.findall(r"a?", "aaabaaca"))
+
+print(re.findall(r"a{2,3}", "aaabaaca"))
