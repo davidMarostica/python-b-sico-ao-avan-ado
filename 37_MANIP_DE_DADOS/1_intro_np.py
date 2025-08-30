@@ -64,3 +64,25 @@ print(aleatorios)
 espacados = np.linspace(0, 20, 3)
 
 print(espacados)
+
+
+# aula 4 - propriedades dos arrays
+
+array = np.array([[10, 20 , 30], [1, 5, 10], [2, 4, 6]])
+
+print(array.ndim)
+
+array2 = np.zeros((2, 3, 4))
+
+print(array2)
+
+print(array2.ndim)
+
+print(array.shape)
+print(array2.shape)
+
+print(array.dtype)
+print(array2.dtype)
+
+print(array.size)
+print(array2.size)
