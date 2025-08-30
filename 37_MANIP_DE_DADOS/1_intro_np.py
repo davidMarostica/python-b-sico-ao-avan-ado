@@ -15,10 +15,27 @@ print(dados_quadrados_np)
 
 import pandas as pd
 
-# dados = pd.read_csv("dados.csv")
+dados = pd.read_csv("dados.csv")
 
-# print(dados.head())
+print(dados.head())
 
-# dados["coluna_existente"] = dados["coluna_existente"] * 2
+dados["coluna_existente"] = dados["coluna_existente"] * 2
 
-# print(dados.head())
+print(dados.head())
+
+# aula 2 - introducao ao numpy
+array = np.array([1, 2, 3, 4, 5])
+
+print(array)
+
+print(array * 2)
+
+matriz = np.array([[1, 2, 3], [4, 5, 6]])
+
+print(matriz)
+
+print(np.mean(matriz))
+
+
+print(np.mean(array))
+
