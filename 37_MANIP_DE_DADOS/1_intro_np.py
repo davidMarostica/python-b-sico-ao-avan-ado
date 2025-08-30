@@ -39,3 +39,28 @@ print(np.mean(matriz))
 
 print(np.mean(array))
 
+
+# aula 3 - arrays com numpy
+
+arr = [10, 20, 30]
+
+array = np.array(arr)
+
+print(array)
+
+zeros = np.zeros((4, 4))
+
+print(zeros)
+
+uns = np.ones((3, 7))
+
+print(uns)
+
+aleatorios = np.random.rand(3, 5)
+
+print(aleatorios)
+
+# inicial, final, num. els
+espacados = np.linspace(0, 20, 3)
+
+print(espacados)
