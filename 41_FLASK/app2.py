@@ -10,8 +10,10 @@ def api():
         return jsonify({"message": "Método GET ativado."})
     elif request.method == "POST":
         return jsonify({"message": "Método POST ativado."})
-    # PUT
-    # DELETE
+    elif request.method == "PUT":
+        return jsonify({"message": "Método PUT ativado."})
+    elif request.method == "DELETE":
+        return jsonify({"message": "Método DELETE ativado."})
 
 # aula 2 - criando views
 @app.route("/custom-response")
