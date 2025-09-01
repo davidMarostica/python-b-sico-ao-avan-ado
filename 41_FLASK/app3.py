@@ -14,6 +14,11 @@ def home():
 def sobre():
     return render_template("sobre.html")
 
+# aula 2 - componentes
+@app.route("/teste")
+def teste():
+    return render_template("teste.html")
+
 
 if __name__ == "__main__":
     app.run(debug=True)
