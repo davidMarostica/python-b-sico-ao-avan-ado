@@ -10,5 +10,14 @@ def api():
         return jsonify({"message": "Método GET ativado."})
     elif request.method == "POST":
         return jsonify({"message": "Método POST ativado."})
-    # PUT
-    # DELETE
+    elif request.method == "PUT":
+        return jsonify({"message": "Método PUT ativado."})
+    elif request.method == "DELETE":
+        return jsonify({"message": "Método DELETE ativado."})
+
+@app.route("/")
+def home():
+    return "Bem-vindo ao seu primeiro app de Flask!"
+
+if __name__ == "__main__":
+    app.run(debug=True)
