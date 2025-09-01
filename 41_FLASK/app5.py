@@ -59,5 +59,15 @@ def listar_usuarios():
 
 # ...existing code...
 
+# aula 3 - variaveis de ambiente
+app.config["SECRET_KEY"] = os.getenv("SECRET_KEY", "chave-padrao")
+
+@app.route("/teste-env")
+def teste_env():
+    return f"A chave secreta é {app.config["SECRET_KEY"]}"
+
+if __name__ == "__main__":
+    app.run(debug=True)
+
 if __name__ == "__main__":
     app.run(debug=True)
