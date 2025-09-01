@@ -31,7 +31,7 @@ def redirecionamento():
 # aula 3 - iniciando com jinja
 @app.route("/teste-jinja")
 def teste_jinja():
-    return render_template("index.html", nome="Matheus", idade=14)
+    return render_template("index.html", nome="David", idade=42)
 
 # aula 4- loops
 @app.route("/usuarios")
