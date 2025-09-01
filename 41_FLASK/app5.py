@@ -30,3 +30,34 @@ with app.app_context():
 
 print("Banco de dados criado com sucesso!")
 
+
+# aula 2 - criacao de usuarios e listagem
+@app.route("/criar_usuario", methods=["GET", "POST"])
+def criar_usuario():
+
+    if request.method == "POST":
+        nome = request.form.get("nome")
+        email = request.form.get("email")
+
+        novo_usuario = Usuario(nome=nome, email=email)
+
+        db.session.add(novo_usuario)
+
+        db.session.commit()
+
+        return redirect(url_for("listar_usuarios"))
+
+
+
+    return render_template("criar_usuario.html")
+
+@app.route("/listar_usuarios")
+def listar_usuarios():
+    usuarios = Usuario.query.all()
+
+    return render_template("listar_usuarios.html", usuarios=usuarios)
+
+# ...existing code...
+
+if __name__ == "__main__":
+    app.run(debug=True)
